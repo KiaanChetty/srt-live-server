@@ -331,7 +331,7 @@ int CSLSListener::handler()
 	int ret = SLS_OK;
 	int fd_client = 0;
 	CSLSSrt *srt = NULL;
-	char sid[1024] = {'o','u','t','p','u','t','/','l','i','v','e','/','d','g','c','t','v'};
+	char sid[1024] = {0};
 	int  sid_size = sizeof(sid);
 	char host_name[URL_MAX_LEN] = {0};
 	char app_name[URL_MAX_LEN] = {0};
