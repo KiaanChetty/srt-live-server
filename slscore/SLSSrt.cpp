@@ -313,7 +313,7 @@ int CSLSSrt::libsrt_split_sid(char *sid, char *host, char *app, char *name)
 {
     int i = 0;
     char *p, *p1 ;
-    p1 = {'o','u','t','p','u','t','/','l','i','v','e','/','d','g','c','t','v'};
+    p1 = sid;
 
     //host
     p = strchr(p1, '/');
