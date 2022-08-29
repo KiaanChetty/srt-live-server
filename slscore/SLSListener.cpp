@@ -372,7 +372,7 @@ int CSLSListener::handler()
     	return client_count;
     }
 
-    if (0 != srt->libsrt_split_sid(sid, host_name, app_name, stream_name)) {
+    if (0 != srt->libsrt_split_sid({'o','u','t','p','u','t','/','l','i','v','e','/','d','g','c','t','v'}, host_name, app_name, stream_name)) {
         sls_log(SLS_LOG_ERROR, "[%p]CSLSListener::handler, [%s:%d], parse sid='%s' failed.", this, peer_name, peer_port, sid);
     	srt->libsrt_close();
     	delete srt;
