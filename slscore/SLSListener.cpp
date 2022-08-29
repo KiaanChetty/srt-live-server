@@ -331,7 +331,7 @@ int CSLSListener::handler()
 	int ret = SLS_OK;
 	int fd_client = 0;
 	CSLSSrt *srt = NULL;
-	char sid[1024] = {0};
+	char sid[1024] = {'o','u','t','p','u','t','/','l','i','v','e','/','d','g','c','t','v'};
 	int  sid_size = sizeof(sid);
 	char host_name[URL_MAX_LEN] = {0};
 	char app_name[URL_MAX_LEN] = {0};
@@ -372,7 +372,7 @@ int CSLSListener::handler()
     	return client_count;
     }
 
-    if (0 != srt->libsrt_split_sid({'o','u','t','p','u','t','/','l','i','v','e','/','d','g','c','t','v'}, host_name, app_name, stream_name)) {
+    if (0 != srt->libsrt_split_sid(sid, host_name, app_name, stream_name)) {
         sls_log(SLS_LOG_ERROR, "[%p]CSLSListener::handler, [%s:%d], parse sid='%s' failed.", this, peer_name, peer_port, sid);
     	srt->libsrt_close();
     	delete srt;
